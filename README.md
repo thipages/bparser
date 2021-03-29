@@ -21,7 +21,7 @@ bparser(expression,regExp);
 ```
 ## Usage
 ```javscript
-const paths = bparser(expression,regExp);
+const pathsObjet = bparser(expression,regExp);
 ```
 `expression` : String containing
 - comparison operator(s) : `AND,OR`
