@@ -1,5 +1,5 @@
 import bParser from "../esm/index.js";
-const regex=[/[a-z]/g,/'.+?'/g];
+const regex=[/[a-z]+/g,/'.+?'/g];
 const tests= [
     [
         '',
@@ -46,6 +46,18 @@ const tests= [
     [
         '((a AND b) OR e)   or    (c OR d)',
         false,regex[0]
+    ],
+    [
+        /**
+         * original expression : IBM AND apple stuff AND (IBM OR Microsoft)
+         * changed for simplification
+         * from https://github.com/riichard/boolean-parser-js/issues/12
+         */
+        'ibm AND applestuff AND (ibm OR microsoft)',
+        [
+            ["ibm", "applestuff"],
+            ["ibm", "applestuff", "microsoft"]
+        ],regex[0]
     ]
 ];
 const JS=JSON.stringify;

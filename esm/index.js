@@ -30,6 +30,6 @@ export default (p,regex)=> {
             ? []
             : [].concat(...resolve(simply)).map(
                 v => sort(v.replace(/&/g, ',').split(','))
-            ).map(v => v.map(w => reg.get(w)))
+            ).map(v => v.map(w => reg.get(w))).map(v=>[...new Set(v)])
     }
 };
