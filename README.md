@@ -76,3 +76,13 @@ Expression                    | Results
 ## Related projects
  ###  [Boolean-parser](https://github.com/riichard/boolean-parser-js)
 The majority of the examples comes from this other (and fun) implementation
+
+## Algorithm
+The algorithm heavily relies on String and Regex.
+Even if the performance is slightly better than [Boolean-parser](https://github.com/riichard/boolean-parser-js), I think it can be dramatically improved considering:
+- one way analysis of the expression instead of two
+- better data structure for keeping states and merging them
+
+This may have also an favorable impact on the LOC number.
+  
+... to be continued
